@@ -58,8 +58,39 @@ function reduce(array, f, acc) {
 //solve it using the most appropriate helper functions(reduce,each,map,filter).
 //wordLengths("hello its me") // [5,3,2]
 
+
+// comments 
 function wordLengths(str) {
-    // TODO: your code here 
+var arrayStr=str.split(" ");
+
+var newArray=[];
+  for (var i =0; i< arrayStr.length ; i++){
+     return arrayStr[i].length;
+  }
+  newArray.push(arrayStr[i].length)
+    return newArray; 
+}
+// we need to convert string to an array 
+// theb define new array and return it back
+// we need to iterate over an array usinf for loop 
+// then put condition for length 
+// we need to use index 
+// then push the value in new array
+// we can use each to iterate over an array using for loop
+
+
+
+
+function wordLengths(str) {
+var arrayStr=str.split(" ");
+var newArray;
+each(arrayStr,function(element){
+})
+  for (var i =0; i<= arrayStr.length ; i++){
+     return "element".length;
+  }
+  newArray.push("element".length)
+    return newArray; 
 }
 
 //=============================================================================
@@ -72,8 +103,33 @@ function wordLengths(str) {
 // countOccurrences("hello, world!", "l"); // 3
 
 function countOccurrences(string, character) {
-    // your code is here
+  var counter=0;
+  var arrayString=string.split("");
+  for (var i = 0 ; i < arrayString.length ; i++ ){
+    if (character === arrayString[i]){
+    counter++
+  }
+  }
+  return counter;
+  
 }
+
+// comments
+// we need to convert string to array
+// the return from array is number , so we need accumulator
+// use reduce to iterate over an array and define accumulator number
+// the result is a single value , which is a accumulator 
+
+function countOccurrences(string, character) {
+var arrayString=string.split("");
+  reduce (arrayString, function (element,i) {
+
+  }, acc)
+    if (character === arrayString[i]){
+    acc++
+  }  
+  return acc;
+}  
 
 //=============================================================================
 /*                                  Q3                                    */
@@ -84,7 +140,30 @@ function countOccurrences(string, character) {
 // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
 
 function wordsLongerThanThree(str) {
-    // TODO: your code here 
+  var arrayString = str.split("");
+  var newArrayy=[];
+  for ( var i = 0 ; i < arrayString.length ; i++ ){
+
+    if (arrayString[i].legth > 3){
+      newArrayy.push(arrayString[i]);
+
+    }
+  }
+  return newArrayy;
+}
+
+
+// comments 
+// convert string to an array
+// define new array and iterate over it by for loop 
+// then codition id the element length is larger than 3 , push it into new array 
+//use filter , which implies each (for loop iteration over an array) , and return predicate 
+
+function wordsLongerThanThree(str) {
+  var arrayString = str.split("");
+  filter(arrayString, function (element,i){
+    return arrayString[i].legth > 3
+  })
 }
 
 //=============================================================================
@@ -98,11 +177,14 @@ function wordsLongerThanThree(str) {
 //repeatString('dog', 2); // => 'dog' + 'dog' => 'dogdog' 
 //repeatString('dog', 3); // => 'dog' + 'dog' + 'dog' => 'dogdogdog'
 
-function repeatString(str, count) { 
- // TODO: your code here 
+function repeatString(str, count){ 
+  if (count === 0){  //we need stop function
+  return "";
+
+ }
+ return str += repeatString(str,count-1); //function call itself
 } 
  
-
 //=============================================================================
 /*                                  Q5                                       */
 //=============================================================================
@@ -130,6 +212,50 @@ function repeatString(str, count) {
 
 // Write your code here .....
 
+// comments 
+// ingredient is an array , so i need data modeling to define an array
+//to add we need to define variable array for ingrediants 
+// then use .push() to add elements to an array
+
+function makePizza (crust,size,numberOfSlice){
+function ingrediant (name , quantity , type){
+  return{
+    name.name,
+    quantity:quantity,
+    type:type
+  };  
+} 
+var ingrediant1=["water",8,"liquid"];
+var ingrediant2 = ["oil",9,"liquid"];
+
+var ingrediantArray=[ingrediant1,ingrediant2];
+function addIngredients(){
+  var newArray=[];
+  for(var i = 0 ;i < ingrediantArray.length ; i++){
+    newArray.push(ingrediantArray);
+  }
+ return newArray;
+}
+
+
+function displayIngredients(){
+  var display = "";// to display we use string variable to store the value in it .
+ return display +  " " + ingrediantArray.ingrediant1 + " , " + ingrediantArray.ingrediant2;
+}
+
+function bakePizza(){
+  return "Your" + size + " "+ crust + " " + numberOfSlice +" pizza is done" 
+}
+function eatSlice(){
+  if(numberOfSlice > 0){
+    return "you can eat"
+  }
+  numberOfSlice--;
+
+}
+
+}
+
 //=============================================================================
 /*                                  Q6                                      */
 //=============================================================================
@@ -156,6 +282,28 @@ d- Decrement the number of "unread" books
 
 // Write your code here .....
 
+
+function ReadingList(){
+  var obj={};
+  obj.read:read,
+  obj.unRead:unRead,
+  obj.toRead:toRead,
+  obj.currentRead:currentRead,
+  obj.readBooks:readBooks
+
+var AddBook : function (book){
+  return this.toRead.push(book);
+  this.unRead++;
+}
+var finishCurrentBook: function(){
+  return this.readBooks.push(this.currentRead);
+  return this.toRead.unshift(this.currentRead);
+  this.read++;
+  this.unRead--;
+}
+
+}
+
 //=============================================================================
 /*                                  Q7                                       */
 //=============================================================================
@@ -176,6 +324,15 @@ d- Decrement the number of "unread" books
 
 // Write your code here .....
 
+
+
+function makeSafe (initial){
+
+
+  function addItem(item,itemSize)
+
+}
+
 //=============================================================================
 /*                                  Q8                                       */
 //=============================================================================
@@ -190,6 +347,11 @@ d- Decrement the number of "unread" books
 //Do not add a list item if the color value is non of the colors
 
 //DO NOT USE JQUERY
+
+var element = gtElementById("")
+
+
+
 
 //================================================================================
 /*                              Q9                                            */
@@ -216,14 +378,18 @@ d- Decrement the number of "unread" books
 //================================================================================
 // Theoretical questions.
 // 1- In your own words,Why do we use Closures ?
+// to seprate function's variable from each other , 
+// to maje each function use thier own variable in local scope , which called encapsulation 
+//so when use global variable it will be accumulative , which is not what we want , when using global variable for another function 
+
 
 // 2- In OOP, what does "this" refer to ?
+// this its refers to object define at first , like a reference and pointer for an object 
 
 // 3- What is jQuery?
+// javascript library , to simplify its function and make it easier to learn
 
 // 4- what is the diffrence between Closure's methods and The OOP's methods?
-
-
-
+// in closure the each function use thier own local scope variable , so thier value not effect each other , but in OOP we refernce the variable to global .
 
 
